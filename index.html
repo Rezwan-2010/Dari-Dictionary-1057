@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>فرهنگ لغات دری - مکاتب افغان ترک پسرانه شبرغان</title>
+    <!-- Google Fonts: Noto Nastaliq Urdu & Vazirmatn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0c386d">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header Banner -->
+    <div class="header-banner">
+        <!-- Right Side: School Logo -->
+        <div class="logo-area">
+            <img src="logo.png" alt="لوگوی افغان ترک شبرغان" class="school-logo">
+        </div>
+
+        <!-- Center: Title & Subtitle -->
+        <div class="culture-title-area">
+            <h1>فرهنگ لغات دری</h1>
+            <p class="subtitle">مکاتب افغان ترک پسرانه شبرغان • دیپارتمنت زبان و ادبیات دری</p>
+        </div>
+
+        <!-- Left Side: Controls -->
+        <div class="header-controls">
+            <select id="fontSwitcherSelect" class="icon-btn-icon compact-select" title="انتخاب فونت">
+                <option value="font-vazir">🔤 وزیر</option>
+                <option value="font-shabnam">شبنم</option>
+                <option value="font-sahel">ساحل</option>
+                <option value="font-bzar">B Zar</option>
+                <option value="font-mitra">B Mitra</option>
+                <option value="font-nastaliq">نستعلیق</option>
+            </select>
+            <select id="fontSizeSelect" class="icon-btn-icon compact-select" title="اندازه فونت">
+                <option value="14">📏 ۱۴ px</option>
+                <option value="16" selected>۱۶ px</option>
+                <option value="18">۱۸ px</option>
+                <option value="20">۲۰ px</option>
+                <option value="24">۲۴ px</option>
+                <option value="28">۲۸ px</option>
+                <option value="36">۳۶ px</option>
+            </select>
+            <button id="darkModeToggle" class="icon-btn-icon" title="حالت شب/روز">🌙</button>
+        </div>
+    </div>
+
+    <!-- Word Of The Day -->
+    <div id="wordOfTheDay" class="wotd-card"></div>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+        <button class="tab-btn active" data-tab="dictionary"><img src="Book.png" alt="لغت" class="tab-icon"> فرهنگ لغت</button>
+        <button class="tab-btn" data-tab="bookmarks"><img src="Heart.png" alt="علاقه‌مندی" class="tab-icon"> علاقه‌مندی‌ها</button>
+        <button class="tab-btn" data-tab="quiz"><img src="Exam.png" alt="آزمون" class="tab-icon"> آزمون چهارگزینه‌ای</button>
+        <button class="tab-btn" data-tab="writeExam"><img src="Writing Exam.png" alt="امتحان کتبی" class="tab-icon"> امتحان کتبی</button>
+        <button class="tab-btn" data-tab="flashcards"><img src="FlashCard.png" alt="فلش کارت" class="tab-icon"> فلش کارت</button>
+        <button class="tab-btn" data-tab="match"><img src="Game.png" alt="بازی" class="tab-icon"> بازی مقایسوی</button>
+        <button class="tab-btn" data-tab="speedgame"><img src="Speed.png" alt="سرعت" class="tab-icon"> مسابقه سرعت</button>
+        <button class="tab-btn" data-tab="ai"><img src="AI.png" alt="هوش مصنوعی" class="tab-icon"> هوش مصنوعی دری</button>
+        <button class="tab-btn" data-tab="custom"><img src="Add.png" alt="افزودن" class="tab-icon"> افزودن واژه</button>
+        <button class="tab-btn" data-tab="progress"><img src="Progress.png" alt="پیشرفت" class="tab-icon"> پیشرفت</button>
+        <button class="tab-btn" data-tab="random"><img src="Random.png" alt="تصادفی" class="tab-icon"> واژه تصادفی</button>
+    </div>
+
+    <!-- Search Box -->
+    <input id="searchInput" class="search-box" type="text" placeholder="جستجوی واژه یا معنی...">
+
+    <!-- Alphabet Filter Bar -->
+    <div id="alphabetBar" class="alphabet-bar">
+        <button class="alpha-btn active" data-letter="all">همه</button>
+        <button class="alpha-btn" data-letter="آ">آ</button>
+        <button class="alpha-btn" data-letter="ا">ا</button>
+        <button class="alpha-btn" data-letter="ب">ب</button>
+        <button class="alpha-btn" data-letter="پ">پ</button>
+        <button class="alpha-btn" data-letter="ت">ت</button>
+        <button class="alpha-btn" data-letter="ث">ث</button>
+        <button class="alpha-btn" data-letter="ج">ج</button>
+        <button class="alpha-btn" data-letter="چ">چ</button>
+        <button class="alpha-btn" data-letter="ح">ح</button>
+        <button class="alpha-btn" data-letter="خ">خ</button>
+        <button class="alpha-btn" data-letter="د">د</button>
+        <button class="alpha-btn" data-letter="ذ">ذ</button>
+        <button class="alpha-btn" data-letter="ر">ر</button>
+        <button class="alpha-btn" data-letter="ز">ز</button>
+        <button class="alpha-btn" data-letter="ژ">ژ</button>
+        <button class="alpha-btn" data-letter="س">س</button>
+        <button class="alpha-btn" data-letter="ش">ش</button>
+        <button class="alpha-btn" data-letter="ص">ص</button>
+        <button class="alpha-btn" data-letter="ض">ض</button>
+        <button class="alpha-btn" data-letter="ط">ط</button>
+        <button class="alpha-btn" data-letter="ظ">ظ</button>
+        <button class="alpha-btn" data-letter="ع">ع</button>
+        <button class="alpha-btn" data-letter="غ">غ</button>
+        <button class="alpha-btn" data-letter="ف">ف</button>
+        <button class="alpha-btn" data-letter="ق">ق</button>
+        <button class="alpha-btn" data-letter="ک">ک</button>
+        <button class="alpha-btn" data-letter="گ">گ</button>
+        <button class="alpha-btn" data-letter="ل">ل</button>
+        <button class="alpha-btn" data-letter="م">م</button>
+        <button class="alpha-btn" data-letter="ن">ن</button>
+        <button class="alpha-btn" data-letter="و">و</button>
+        <button class="alpha-btn" data-letter="ه">ه</button>
+        <button class="alpha-btn" data-letter="ی">ی</button>
+    </div>
+
+    <!-- Grade Filter Container -->
+    <div id="filterContainer" class="filter-container">
+        <button class="filter-btn active" data-grade="all">همه صنوف</button>
+        <button class="filter-btn" data-grade="7">صنف ۷</button>
+        <button class="filter-btn" data-grade="8">صنف ۸</button>
+        <button class="filter-btn" data-grade="9">صنف ۹</button>
+        <button class="filter-btn" data-grade="10">صنف ۱۰</option>
+        <button class="filter-btn" data-grade="11">صنف ۱۱</button>
+        <button class="filter-btn" data-grade="12">صنف ۱۲</button>
+    </div>
+
+    <!-- Statistics -->
+    <div id="stats" class="stats"></div>
+
+    <!-- Main Word List Area -->
+    <div id="wordList" class="word-list"></div>
+
+</div>
+
+<script src="vocabulary.js"></script>
+<script src="features.js"></script>
+
+</body>
+</html>
